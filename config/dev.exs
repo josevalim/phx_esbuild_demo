@@ -29,7 +29,7 @@ config :demo, DemoWeb.Endpoint,
       "--outfile=../priv/static/assets/app.js",
       "--watch",
       cd: Path.expand("../assets", __DIR__),
-      env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+      env: %{"NODE_PATH" => Mix.Project.deps_path()}
     ],
     node: [
       "node_modules/postcss-cli/bin/postcss",
