@@ -22,13 +22,9 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 demo-*.tar
 
-# If NPM crashes, it generates a log, let's ignore it too.
+# Ignore assets that are produced by build tools.
+/priv/static/assets/
+
+# In case you use Node.hs/npm, you want to ignore these.
 npm-debug.log
-
-# The directory NPM downloads your dependencies sources to.
 /assets/node_modules/
-
-# Since we are building assets from assets/,
-# we ignore priv/static. You may want to comment
-# this depending on your deployment strategy.
-/priv/static/

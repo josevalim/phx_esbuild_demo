@@ -1,15 +1,21 @@
-// We need to import the CSS so that webpack will load it.
-// The MiniCssExtractPlugin is used to separate it out into
-// its own CSS file.
-import "../css/app.scss"
+// We import the CSS which is extracted to its own file by esbuild.
+import "../css/app.css"
 
-// webpack automatically bundles all modules in your
-// entry points. Those entry points can be configured
-// in "webpack.config.js".
-//
-// Import deps with the dep name or local files with a relative path, for example:
-//
-//     import {Socket} from "phoenix"
-//     import socket from "./socket"
-//
+// Bring phoenix_html to deal with method=PUT/DELETE in forms and buttons
 import "phoenix_html"
+
+// Uncomment below to bring Phoenix' client side socket
+// import socket from "./socket"
+
+// You can bring dependencies in two ways.
+//
+// The simplest option is to put them in assets/vendor and
+// import them using relative paths:
+//
+//     import "./vendor/some-package.min.js"
+//
+// Alternatively, you can `npm install some-package` and import
+// them using a path starting with the package name:
+//
+//     import "some-package"
+//
