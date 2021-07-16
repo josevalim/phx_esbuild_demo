@@ -21,8 +21,6 @@ config :demo, DemoWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    # TODO: if this configuration happens in config/runtime.exs
-    # we could simply call `Esbuild.bin_path()`.
     "#{Mix.Project.build_path()}/../esbuild": [
       "js/app.js",
       "--bundle",
