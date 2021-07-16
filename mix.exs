@@ -62,7 +62,7 @@ defmodule Demo.MixProject do
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": [
         "cmd npm run deploy --prefix assets",
-        "cmd esbuild assets/js/app.js --bundle --minify --target=es2016 --outfile=priv/static/assets/app.js",
+        "cmd NODE_PATH=#{Mix.Project.deps_path()} esbuild assets/js/app.js --bundle --minify --target=es2016 --outfile=priv/static/assets/app.js",
         "phx.digest"
       ]
     ]

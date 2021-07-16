@@ -34,3 +34,7 @@
   display: block;
   margin: -1rem 0 2rem;
 }
+
+.foo {
+  @apply m-3 bg-green-50
+}
