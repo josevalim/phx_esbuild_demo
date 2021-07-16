@@ -28,7 +28,8 @@ config :demo, DemoWeb.Endpoint,
       "--target=es2016",
       "--outfile=../priv/static/assets/app.js",
       "--watch",
-      cd: Path.expand("../assets", __DIR__)
+      cd: Path.expand("../assets", __DIR__),
+      env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
     ],
     node: [
       "node_modules/postcss-cli/bin/postcss",
