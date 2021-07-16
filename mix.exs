@@ -44,7 +44,8 @@ defmodule Demo.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:esbuild, path: "./esbuild"}
     ]
   end
 
@@ -61,7 +62,7 @@ defmodule Demo.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": [
-        "cmd esbuild assets/js/app.js --bundle --minify --target=es2016 --outfile=priv/static/assets/app.js",
+        "esbuild assets/js/app.js --bundle --minify --target=es2016 --outfile=priv/static/assets/app.js",
         "phx.digest"
       ]
     ]
