@@ -29,6 +29,13 @@ config :demo, DemoWeb.Endpoint,
       "--outfile=../priv/static/assets/app.js",
       "--watch",
       cd: Path.expand("../assets", __DIR__)
+    ],
+    node: [
+      "node_modules/postcss-cli/bin/postcss",
+      "css/app.css",
+      "--output=../priv/static/assets/app.css",
+      "--watch",
+      cd: Path.expand("../assets", __DIR__)
     ]
   ]
 

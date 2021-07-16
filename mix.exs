@@ -56,11 +56,12 @@ defmodule Demo.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup"],
+      setup: ["deps.get", "ecto.setup", "cmd npm install --prefix assets"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": [
+        "cmd npm run deploy --prefix assets",
         "cmd esbuild assets/js/app.js --bundle --minify --target=es2016 --outfile=priv/static/assets/app.js",
         "phx.digest"
       ]
