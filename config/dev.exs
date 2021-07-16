@@ -21,11 +21,13 @@ config :demo, DemoWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
+    esbuild: [
+      "js/app.js",
+      "--bundle",
+      "--sourcemap=inline",
+      "--target=es2016",
+      "--outfile=../priv/static/assets/app.js",
+      "--watch",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]
