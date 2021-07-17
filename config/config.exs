@@ -32,7 +32,7 @@ config :esbuild,
   default: [
     args: ~w(js/app.js --bundle --target=es2016 --outdir=../priv/static/assets),
     cd: Path.expand("../assets", __DIR__),
-    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+    env: %{"NODE_PATH" => Mix.Project.deps_path()}
   ]
 
 # Import environment specific config. This must remain at the bottom
